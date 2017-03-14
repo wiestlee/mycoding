@@ -3,6 +3,26 @@
 <head>
     <meta charset="utf-8">
 	<title>选项卡</title>
+	 <script type="text/javascript">
+ 	window.onload = function(){
+ 		var myTab = document.getElementById("tab");
+ 		var myUl  = myTab.getElementsByTagName("ul")[0];
+ 		var myLi  = myUl.getElementsByTagName("li");
+ 		var myDiv = myTab.getElementsByTagName("div");
+ 		for(var i=0;i<myLi.length;i++){
+ 			myLi[i].index = i;
+ 			myLi[i].onclick = function(){
+ 				for(var j = 0;j<myLi.length;j++){
+ 					myLi[j].className = "off";
+ 					myDiv[j].className = "hide"
+ 					console.log(j);
+ 				}
+ 				this.className = "on";
+ 				myDiv[this.index].className = "show";
+ 			}
+ 		}
+ 	}
+ </script>
 	 <style type="text/css">
  	*{
  		padding:0;
@@ -51,6 +71,7 @@
  	.hide{
  		display: none;
  	}
+ 	</style>
 </head>
 <body>
 <!--   html页面布局 -->
@@ -79,25 +100,5 @@
 		<a href="#">黄城根小学学区仅260万 121平70万抛!</a>
 	</div>
 </div>
-
- </style>
- <script type="text/javascript">
- 		var myTab = document.getElementById("tab");
- 		var myUl  = myTab.getElementsByTagName("ul")[0];
- 		var myLi  = myUl.getElementsByTagName("li");
- 		var myDiv = myTab.getElementsByTagName("div");
- 		for(var i=0;i<myLi.length;i++){
- 			myLi[i].index = i;
- 			myLi[i].onclick = function(){
- 				for(var j = 0;j<myLi.length;j++){
- 					myLi[j].className = "off";
- 					myDiv[j].className = "hide"
- 					console.log(j);
- 				}
- 				this.className = "on";
- 				myDiv[this.index].className = "show";
- 			}
- 		}
- </script>
 </body>
 </html>
